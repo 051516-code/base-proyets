@@ -1,0 +1,89 @@
+/src
+│
+├── /app
+│   ├── app.component.ts                # Componente raíz
+│   ├── app.module.ts                   # Módulo raíz de la aplicación
+│   ├── app-routing.module.ts           # Rutas principales de la aplicación
+│   ├── /core                           # Núcleo de la aplicación
+│   │   ├── /api                        # Servicios relacionados con APIs externas
+│   │   │   ├── api.service.ts
+│   │   │   └── api.module.ts
+│   │   ├── /guards                     # Guards de autenticación o protección de rutas
+│   │   │   ├── auth.guard.ts           # Ejemplo de AuthGuard
+│   │   ├── /interceptors               # Interceptores HTTP (autenticación, manejo de errores)
+│   │   │   ├── auth.interceptor.ts     # Ejemplo de interceptor de autenticación
+│   │   │   ├── error.interceptor.ts    # Interceptor para manejar errores globales
+│   │   ├── /models                     # Modelos y entidades globales de la aplicación
+│   │   │   ├── user.model.ts           # Ejemplo de modelo de Usuario
+│   │   ├── /services                   # Servicios globales
+│   │   │   ├── auth.service.ts         # Servicio de autenticación
+│   │   │   ├── storage.service.ts      # Servicio para manejar almacenamiento local
+│   │   └── core.module.ts              # Importaciones del core module
+│   │
+│   ├── /shared                         # Componentes, directivas y pipes reutilizables
+│   │   ├── /components                 # Componentes compartidos entre varios módulos
+│   │   │   ├── header.component.ts     # Ejemplo: Header global
+│   │   │   ├── footer.component.ts     # Ejemplo: Footer global
+│   │   ├── /directives                 # Directivas personalizadas reutilizables
+│   │   │   ├── highlight.directive.ts  # Ejemplo de directiva
+│   │   ├── /pipes                      # Pipes reutilizables
+│   │   │   ├── custom.pipe.ts          # Ejemplo de Pipe
+│   │   ├── /validators                 # Validadores personalizados
+│   │   │   ├── custom-validator.ts     # Ejemplo de validador
+│   │   └── shared.module.ts            # Módulo compartido que exporta componentes, directivas, pipes, etc.
+│   │
+│   ├── /layout                         # Layout de la aplicación (navbars, sidebars)
+│   │   ├── header.component.ts         # Componente Header
+│   │   ├── footer.component.ts         # Componente Footer
+│   │   ├── sidebar.component.ts        # Componente Sidebar
+│   │   └── layout.module.ts            # Módulo de layout
+│   │
+│   ├── /features                       # Módulos de funcionalidades principales
+│   │   ├── /auth                       # Módulo de autenticación
+│   │   │   ├── login.component.ts      # Componente de Login
+│   │   │   ├── register.component.ts   # Componente de Registro
+│   │   │   ├── forgot-password.component.ts # Componente de recuperación de contraseña
+│   │   │   ├── auth-routing.module.ts  # Rutas del módulo de Autenticación
+│   │   │   └── auth.module.ts          # Módulo de Autenticación
+│   │   ├── /dashboard                  # Módulo Dashboard
+│   │   │   ├── /components             # Componentes específicos del dashboard
+│   │   │   │   ├── chart.component.ts  # Ejemplo de componente de gráficos
+│   │   │   ├── dashboard.page.ts       # Página del Dashboard
+│   │   │   ├── dashboard-routing.module.ts # Rutas del Dashboard
+│   │   │   └── dashboard.module.ts     # Módulo del Dashboard
+│   │   ├── /profile                    # Módulo de perfil de usuario
+│   │   │   ├── /components             # Componentes del perfil (editar, ver)
+│   │   │   ├── profile.page.ts         # Página de Perfil de Usuario
+│   │   │   ├── profile-routing.module.ts # Rutas del Perfil
+│   │   │   └── profile.module.ts       # Módulo del Perfil
+│   │   ├── /company                    # Módulo de gestión de empresas
+│   │   │   ├── /components             # Componentes internos de empresas (CRUD, detalles)
+│   │   │   │   ├── company-list.component.ts # Lista de empresas
+│   │   │   │   ├── company-detail.component.ts # Detalles de la empresa
+│   │   │   ├── /services               # Servicios relacionados con empresas (CRUD, API)
+│   │   │   ├── company.page.ts         # Página principal de empresas
+│   │   │   ├── company-routing.module.ts # Rutas de Empresas
+│   │   │   └── company.module.ts       # Módulo de Empresas
+│   │   ├── /news                       # Módulo de noticias
+│   │   │   ├── /components             # Componentes de noticias (lista, detalles)
+│   │   │   ├── news.page.ts            # Página de Noticias
+│   │   │   ├── news-routing.module.ts  # Rutas de Noticias
+│   │   │   └── news.module.ts          # Módulo de Noticias
+│
+├── /assets                             # Recursos estáticos como imágenes, fuentes
+│   ├── images                          # Carpeta para imágenes
+│   ├── fonts                           # Carpeta para fuentes personalizadas
+│   └── icons                           # Íconos utilizados en la app
+│
+├── /environments                       # Configuración de entornos (dev, prod, etc.)
+│   ├── environment.ts                  # Entorno de desarrollo
+│   ├── environment.prod.ts             # Entorno de producción
+│
+├── /styles                             # Estilos globales de la aplicación
+│   ├── variables.scss                  # Variables SCSS
+│   ├── global.scss                     # Estilos globales aplicados en toda la app
+│
+└── /utils                              # Utilidades globales
+    ├── helpers.ts                      # Funciones helper generales
+    ├── constants.ts                    # Constantes globales (ej: valores repetitivos)
+    └── date.utils.ts                   # Funciones helper para manejo de fechas

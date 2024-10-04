@@ -1,0 +1,86 @@
+/src
+│
+├── /app.module.ts                        # Módulo raíz de la aplicación
+├── /main.ts                              # Punto de entrada de la aplicación
+│
+├── /core                                 # Funcionalidades compartidas del núcleo
+│   ├── /config                           # Configuración global (env, variables, etc.)
+│   │   ├── configuration.module.ts       # Módulo de configuración
+│   │   └── configuration.service.ts      # Servicio para cargar configuración
+│   ├── /guards                           # Guards (autenticación, roles)
+│   │   ├── jwt-auth.guard.ts             # Ejemplo de guard JWT para autenticación
+│   │   └── roles.guard.ts                # Ejemplo de guard de Roles
+│   ├── /interceptors                     # Interceptores globales
+│   │   ├── logging.interceptor.ts        # Interceptor de logging
+│   ├── /filters                          # Filtros de excepciones (manejo de errores)
+│   │   ├── http-exception.filter.ts      # Filtro global de excepciones HTTP
+│   ├── /pipes                            # Pipes compartidos (validación, transformación)
+│   │   ├── validation.pipe.ts            # Ejemplo de Pipe para validación
+│   ├── /decorators                       # Decoradores personalizados
+│   │   └── roles.decorator.ts            # Decorador de roles
+│   └── /services                         # Servicios compartidos (logger, email, etc.)
+│       ├── logger.service.ts             # Servicio de logging
+│       └── email.service.ts              # Servicio de envío de correos
+│
+├── /shared                               # Recursos y utilidades compartidas
+│   ├── /dto                              # DTOs reutilizables (Data Transfer Objects)
+│   │   ├── pagination.dto.ts             # DTO de paginación
+│   ├── /interfaces                       # Interfaces compartidas
+│   │   └── user.interface.ts             # Ejemplo de interfaz de usuario
+│   └── /constants                        # Constantes globales
+│       ├── app.constants.ts              # Constantes generales de la aplicación
+│       └── jwt.constants.ts              # Constantes relacionadas con JWT
+│
+├── /modules                              # Módulos principales de la aplicación
+│   ├── /auth                             # Módulo de Autenticación
+│   │   ├── /strategies                   # Estrategias de autenticación (JWT, Local)
+│   │   │   ├── jwt.strategy.ts           # Estrategia JWT
+│   │   │   └── local.strategy.ts         # Estrategia Local
+│   │   ├── /controllers                  # Controladores de autenticación
+│   │   │   ├── auth.controller.ts        # Controlador de autenticación
+│   │   ├── /services                     # Servicios del módulo
+│   │   │   ├── auth.service.ts           # Servicio de autenticación
+│   │   ├── auth.module.ts                # Módulo de Autenticación
+│   │   └── auth.controller.ts            # Controlador de Autenticación
+│   │
+│   ├── /users                            # Módulo de Usuarios
+│   │   ├── /controllers                  # Controladores de usuarios
+│   │   │   ├── users.controller.ts       # Controlador para CRUD de usuarios
+│   │   ├── /services                     # Servicios del módulo de usuarios
+│   │   │   └── users.service.ts          # Lógica de negocio de usuarios
+│   │   ├── /entities                     # Entidades de usuarios (mapeo a la base de datos)
+│   │   │   ├── user.entity.ts            # Entidad de Usuario
+│   │   ├── users.module.ts               # Módulo de Usuarios
+│   │   └── users.controller.ts           # Controlador de Usuarios
+│   │
+│   ├── /companies                        # Módulo de Empresas
+│   │   ├── /controllers                  # Controladores de empresas
+│   │   │   ├── companies.controller.ts   # Controlador CRUD para empresas
+│   │   ├── /services                     # Servicios relacionados con empresas
+│   │   │   ├── companies.service.ts      # Servicio para manejar empresas
+│   │   ├── /entities                     # Entidades de empresas
+│   │   │   ├── company.entity.ts         # Entidad de Empresa
+│   │   ├── companies.module.ts           # Módulo de Empresas
+│   │   └── companies.controller.ts       # Controlador de Empresas
+│   │
+│   ├── /news                             # Módulo de Noticias
+│   │   ├── /controllers                  # Controladores de noticias
+│   │   │   ├── news.controller.ts        # Controlador de noticias
+│   │   ├── /services                     # Servicios de noticias
+│   │   │   └── news.service.ts           # Lógica de negocio de noticias
+│   │   ├── /entities                     # Entidad de noticias
+│   │   │   └── news.entity.ts            # Entidad de Noticia
+│   │   ├── news.module.ts                # Módulo de Noticias
+│   │   └── news.controller.ts            # Controlador de Noticias
+│
+├── /database                             # Configuración y módulos relacionados con la base de datos
+│   ├── database.module.ts                # Módulo de conexión a la base de datos
+│   ├── database.providers.ts             # Proveedores de la base de datos (conexiones)
+│   └── ormconfig.ts                      # Configuración de TypeORM o Prisma
+│
+└── /tests                                # Pruebas unitarias y de integración
+    ├── /e2e                              # Pruebas end-to-end
+    │   └── app.e2e-spec.ts               # Prueba E2E ejemplo
+    ├── /unit                             # Pruebas unitarias
+    │   └── auth.service.spec.ts          # Prueba unitaria del servicio de autenticación
+    └── jest.config.ts                    # Configuración de Jest
